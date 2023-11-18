@@ -1,6 +1,7 @@
-fetch('http://localhost:8082/detail')
+fetch(`http://localhost:8082/declaration/show/4`)
 .then(response => response.json())
 .then(data => {
+    document.getElementById('title').value = data.title;
     document.getElementById('content').value = data.content;
     let mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
@@ -32,13 +33,13 @@ openModal();
 document.getElementById('confirmDeleteButton').addEventListener('click', function () {
 let password = document.getElementById('password').value;
 
-fetch('http://localhost:8082/delete/1?password=' + password, {
+fetch(`http://localhost:8082/declaration/4?password=` + password, {
     method: 'POST',
 })
     .then(response => {
         if (response.ok) {
             console.log('Report deleted successfully!');
-            window.location.href=''
+            window.location.href='declaration.html';
             closeModal();
         } else {
             alert('비밀번호가 틀렸습니다');

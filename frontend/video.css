@@ -1,14 +1,8 @@
 body{
-   
+
     background-size: 120%;
     margin: 0 auto;
-    
-}
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+
 }
 .video_top_back > .top_nav {
     color: black;
@@ -18,7 +12,12 @@ body{
     font-size: 17px;
     position: sticky;
     top: -400px;
+}
+@font-face {
     font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
 
 a{
@@ -32,6 +31,7 @@ a{
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 7px;
+    font-family: 'Pretendard-Regular';
 }
 .video_top_back {
     background-image: url("/picture/nature-845849_1920.jpg");
@@ -52,6 +52,7 @@ a{
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
     text-align: center;
+    font-family: 'Pretendard-Regular';
 }
 .video_logo.visible {
     opacity: 0;
@@ -64,7 +65,7 @@ a{
 /* section */
 
 .video_section {
-    
+
     opacity: 1;
     transition: opacity 0.7s ease-in-out;
 }
@@ -77,7 +78,7 @@ navbar {
     margin-bottom: 30px;
     margin-left: 20px;
     margin-right: 20px;
-    
+
 }
 
 navbar a {
@@ -86,8 +87,8 @@ navbar a {
 }
 
 section {
-    
-    
+
+
     margin-top: 100px;
     margin-left: 50px;
 }
@@ -172,7 +173,7 @@ section {
     position: absolute;
     right: 50px;
     top: 364px;
-    
+
     padding-left: 20px;
     padding-top: 70px;
     height: 800px;
@@ -188,7 +189,7 @@ section {
     margin: 10px;
     margin-left: -10px;
     width: 450px;
-    
+
 }
 
 .commentul i {
@@ -226,7 +227,27 @@ section {
     align-items: center;
 }
 /* 하단 */
-/* 하단 */
+
+footer{
+    height: 400px;
+    margin-top: 200px;
+    text-align: center;
+
+}
+footer a{
+    transition: all 0.4s;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+footer a:hover{
+    color: #be2237;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
+}
+
+
 .info_section {
     background-color: #b9b8b8;
     color: #ffffff;
@@ -237,9 +258,7 @@ section {
     margin-bottom: 35px;
     font-size: 22px;
 }
-.info_contact{
-    margin-top: -50px;
-}
+
 .info_section .info_contact .info_logo a {
     position: relative;
 }
@@ -255,8 +274,8 @@ section {
 .info_section .info_contact .info_logo a::before {
     content: "";
     position: absolute;
-    left: -10px;
-    bottom: -23px;
+    left: -15px;
+    bottom: 0;
     width: 60px;
     height: 55px;
     background-color: #00504f;

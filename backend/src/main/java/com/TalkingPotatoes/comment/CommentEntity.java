@@ -20,7 +20,6 @@ public class CommentEntity {
     private String comment;
 
     //youtitle  유튜브 페이지 이름
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "youtube_id" )
     private YoutubeEntity youtube_title;

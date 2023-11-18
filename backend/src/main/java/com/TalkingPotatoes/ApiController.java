@@ -63,6 +63,12 @@ public class ApiController {
         declarationService.CreateDeclartaion(dto);
     }
 
+    @GetMapping("/declaration/show")
+    public ResponseEntity<List<DeclarationShowDTO>> showBoard(){
+
+        return ResponseEntity.ok().body(declarationService.showBoard());
+
+    }
 
 
     @PostMapping("/declaration/{id}")
@@ -70,5 +76,10 @@ public class ApiController {
         return ResponseEntity.ok().body(declarationService.DeleteDeclartaion(id, password));
     }
 
+
+    @GetMapping("declaration/show/{id}")
+    public ResponseEntity<DeclarationCreateDTO> showDeclaration(@PathVariable Long id){
+        return ResponseEntity.ok().body(declarationService.showDeclaration(id));
+    }
 
 }

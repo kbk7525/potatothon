@@ -25,39 +25,42 @@ window.onload = function () {
         // 마커 위치를 클릭한 위치로 옮깁니다
         marker.setPosition(latlng);
 
-        document.getElementById('button').addEventListener('click', function() {
+        document.getElementById('button').addEventListener('click', function () {
             let content = document.getElementById('content').value;
             let password = document.getElementById('password').value;
             let title = document.getElementById('title').value;
-            let filesInput = document.getElementById('files');
-            let files = filesInput.files;
             let latitude = latlng.getLat();
             let longitude = latlng.getLng();
 
-            let formData = new FormData();
+            // let formData = new FormData();
 
-            formData.append('content', content);
-            formData.append('password', password);
-            formData.append('title', title);
-            formData.append('latitude', latitude);
-            formData.append('longitude', longitude);
+            // formData.append('content', content);
+            // formData.append('password', password);
+            // formData.append('title', title);
+            // formData.append('latitude', latitude);
+            // formData.append('longitude', longitude);
+            // formData.append('url', longitude);
 
-            for(let i = 0; i < files.length; i++) {
-                formData.append('images', files[i]);
-            }
-            console.log(formData);
-            fetch('http://localhost:8082/upload', {
+            fetch("http://localhost:8082/declaration/create", {
                 method: 'POST',
-                body: formData,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    content: content,
+                    password: password,
+                    title: title,
+                    latitude: latitude,
+                    longitude: longitude
+                }),
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success : ', data);
-                window.location.href='declaration.html';
-            })
-            .catch(error => {
-                console.log('error : ' ,error);
-            })
+                .then(data => {
+                    console.log('Success : ', data);
+                    window.location.href='declaration.html';
+                })
+                .catch(error => {
+                    console.log('error : ', error);
+                })
         })
     });
 }

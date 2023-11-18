@@ -29,9 +29,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-
-
-
 // 데이터요청
 function comment() {
     let commentinp = document.querySelector(".commentinput");
@@ -47,15 +44,17 @@ function comment() {
 function sendDataToServer(commentValue) {
     // 서버로 데이터를 보내는 fetch 요청
     const data = {
-        comment: commentValue
-        
+        comment: commentValue,
+        youtubeEntityId : 1
     };
-    fetch('서버_URL', {
+    console.log(data);
+    fetch('http://localhost:8082/saveComment', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ data }),
+        
     })
     .then(response => {
         if (!response.ok) {

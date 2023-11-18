@@ -13,4 +13,5 @@ public class CommentsDTO {
 
     private String comment;
 
+
 }
