@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>신고 내용 작성</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0454ac8612a2837299b083a6aa492029"></script>
+    <style>
+        textarea {
+            width: 50%;
+            height: 6.25em;
+            border: none;
+            resize: none;
+        }
+        .edu_top_back {
+            background-image: url("picture/nature-845849_1920.jpg");
+            margin: 0 auto;
+            margin-top: -400px;
+            height: 1000px;
+            background-size: 120%;
+        }
+
+        .edu_top_back>.top_nav {
+            color: black;
+            padding-top: 430px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 17px;
+            position: sticky;
+            top: -400px;
+        }
+
+        .top_nav>a:hover {
+            color: #be2237;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 7px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            transition: all 0.4s;
+        }
+
+        .edu_logo {
+            margin: 20px auto;
+            /* 위 아래 여백을 주기 위해 margin을 사용 */
+            text-align: center;
+        }
+
+        .edu_logo span {
+            font-size: 20px;
+            margin-top: 50px;
+            /* 아래로 내리고 싶은 만큼의 여백 설정 */
+            margin-bottom: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="edu_top_back">
+            <div class="top_nav">
+                <a href="edu.html">교육 페이지</a>
+                <a href="declaration.html" style="margin-left: 70px; margin-right: 70px;">신고 페이지</a>
+                <a href="map.html">불법 투기</a>
+            </div>
+
+            <div class="edu_logo">
+                <div style=" font-size: 20px; margin-top: 130px; margin-bottom: -10px;">scroll </div>
+                <div><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+        </div>
+    </header>
+    <div class="container" style="margin-top: 50px;">
+        <h2>신고 내용 작성</h2>
+        <div class="mb-3">
+            <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요" required>
+        </div>
+        <div class="mb-3">
+            <textarea rows="4" cols="50" class="form-control" id="content" placeholder="내용을 입력하세요" required></textarea>
+        </div>
+        <div id="map" style="width:100%;height:500px;"></div>
+        <div id="clickLatlng"></div>
+        <input type="file" id="files" multiple="multiple"/><br>
+        <button id="button" class="btn btn-primary float-right">작성 완료</button>
+    </div>
+    <script src="board.js"></script>
+</body>
+
+</html>

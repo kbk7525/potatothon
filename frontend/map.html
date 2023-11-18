@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>불법투기 상습지역</title>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0454ac8612a2837299b083a6aa492029"></script>
+    <style>
+        .edu_top_back {
+            background-image: url("picture/nature-845849_1920.jpg");
+            margin: 0 auto;
+            margin-top: -400px;
+            height: 1000px;
+            background-size: 120%;
+        }
+
+        .edu_top_back>.top_nav {
+            color: black;
+            padding-top: 430px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 17px;
+            position: sticky;
+            top: -400px;
+        }
+
+        .top_nav>a:hover {
+            color: #be2237;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 7px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            transition: all 0.4s;
+        }
+
+        .edu_logo {
+            margin: 20px auto;
+            /* 위 아래 여백을 주기 위해 margin을 사용 */
+            text-align: center;
+        }
+
+        .edu_logo span {
+            font-size: 20px;
+            margin-top: 50px;
+            /* 아래로 내리고 싶은 만큼의 여백 설정 */
+            margin-bottom: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="edu_top_back">
+            <div class="top_nav">
+                <a href="edu.html">교육 페이지</a>
+                <a href="declaration.html" style="margin-left: 70px; margin-right: 70px;">신고 페이지</a>
+                <a href="map.html">불법 투기</a>
+            </div>
+
+            <div class="edu_logo">
+                <div style=" font-size: 20px; margin-top: 130px; margin-bottom: -10px;">scroll </div>
+                <div><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+        </div>
+    </header>
+    <div style="margin-top: 50px; margin-left: 240px; text-align: center;">
+        <div id="map" style="width:80%;height:700px;"></div>
+    </div>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+            mapOption = {
+                center: new kakao.maps.LatLng(37.886997286287475, 127.73802112925794), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        fetch('http://localhost:8082/map')
+            .then(data => {
+                console.log(data);
+
+                // 여기서부터 마커를 표시하는 로직을 작성하면 됩니다.
+                let positions = data.map(item => ({
+                    title: item.title,
+                    latlng: new kakao.maps.LatLng(item.lat, item.lng)
+                }));
+                var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+                for (var i = 0; i < positions.length; i++) {
+
+                    // 마커 이미지의 이미지 크기 입니다
+                    var imageSize = new kakao.maps.Size(24, 35);
+
+                    // 마커 이미지를 생성합니다    
+                    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+                    // 마커를 생성합니다
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        position: positions[i].latlng, // 마커를 표시할 위치
+                        title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                        image: markerImage // 마커 이미지 
+                    });
+                }
+            })
+        // // 마커를 표시할 위치와 title 객체 배열입니다 
+        // var positions = [
+        //     {
+        //         title: '카카오',
+        //         latlng: new kakao.maps.LatLng(33.450705, 126.570677)
+        //     },
+        //     {
+        //         title: '생태연못',
+        //         latlng: new kakao.maps.LatLng(33.450936, 126.569477)
+        //     },
+        //     {
+        //         title: '텃밭',
+        //         latlng: new kakao.maps.LatLng(33.450879, 126.569940)
+        //     },
+        //     {
+        //         title: '근린공원',
+        //         latlng: new kakao.maps.LatLng(33.451393, 126.570738)
+        //     }
+        // ];
+
+        // 마커 이미지의 이미지 주소입니다
+
+    </script>
+</body>
+
+</html>
