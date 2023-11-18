@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/slick/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/6e7455cbd0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/slick/slick.css" />
+    <link rel="stylesheet" href="/slick/slick-theme1.css" />
+    <link rel="stylesheet" href="edu.css">
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            $('.slider_container').slick({
+                centerMode: true,
+                centerPadding: '60px',
+                autoplay:true,
+                autoplaySpeed : 2000,
+                slidesToShow: 3,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '60px',
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '100px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+                var logoOffset = $('.edu_logo').offset().top;
+
+                if (scroll > (logoOffset - 50)) {
+                    $('.edu_logo').addClass('visible');
+                } else {
+                    $('.edu_logo').removeClass('visible');
+                }
+            });
+        });
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+                var logoOffset = $('.slider_container').offset().top;
+
+                if (scroll > (logoOffset - 450)) {
+                    $('.slider_container').addClass('visible');
+                } else {
+                    $('.slider_container').removeClass('visible');
+                }
+            });
+        });
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+                var logoOffset = $('.edu_section_span').offset().top;
+
+                if (scroll > (logoOffset - 350)) {
+                    $('.edu_section_span').addClass('visible');
+                } else {
+                    $('.edu_section_span').removeClass('visible');
+                }
+            });
+        });
+        </script>
+</head>
+
+<body>
+    <header>
+        <div class="edu_top_back">
+            <div class="top_nav">
+                <a href="index.html" style="margin-right: 40px;">메인 페이지</a>
+                <a href="edu.html">교육 페이지</a>
+                <a href="declaration.html" style="margin-left: 70px; margin-right: 70px;">신고 페이지</a>
+                <a href="map.html">불법 투기 현황</a>
+            </div>
+        </div>
+
+            <div class="edu_logo">
+                <span>education platform</span>
+                <div style=" font-size: 20px; margin-top: 130px; margin-bottom: -10px;">scroll </div>
+                <div><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+
+        </div>
+    </header>
+    <section>
+
+        <div style="margin-top: 30px; font-size: 20px; font-weight: 600 ;font-family: 'Pretendard-Regular';" class="edu_section_span">video select</div>
+        <div class="slider_container">
+
+            <div><a href="video1.html"><img src="picture/video1.JPG" alt=""></a></div>
+            <div><a href="video2.html"><img src="picture/video2.JPG" alt=""></a></div>
+            <div><a href="video3.html"><img src="picture/video3.JPG" alt=""></a></div>
+            <div><a href="video4.html"><img src="picture/video4.JPG" alt=""></a></div>
+
+        </div>
+
+
+
+    </section>
+    
+    
+    <footer class="info_section layout_padding">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <div class="info_logo">
+                            <a href="index.html">
+                                <span>
+                                    GWW
+                                </span>
+                            </a>
+                        </div>
+                        <h5>
+                            Contact Us
+                        </h5>
+                        <div>
+                            <div class="img-box">
+                                <img src="images/location.png" width="18px" alt="" />
+                            </div>
+                            <p>
+                                Page when looking at its layou
+                            </p>
+                        </div>
+                        <div>
+                            <div class="img-box">
+                                <img src="images/phone.png" width="18px" alt="" />
+                            </div>
+                            <p>
+                                +82 01040545718
+                            </p>
+                        </div>
+                        <div>
+                            <div class="img-box">
+                                <img src="images/envelope.png" width="18px" alt="" />
+                            </div>
+                            <p>
+                                likelion@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_info">
+                        <h5>
+                            Invest Money
+                        </h5>
+                        <p>
+                            There are many variations of <br>
+                            passages of Lorem Ipsum <br>
+                            available, but the majority have <br>
+                            suffered alteration <br>
+                            in some form, by injected humour,
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="info_links">
+                        <h5>
+                            Useful Links
+                        </h5>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    There are many
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    variations of
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    passages of
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Lorem Ipsum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    available, but the
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    majority have
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    suffered
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_form ">
+                        <h5>
+                            Newsletter
+                        </h5>
+                        <form action="">
+                            <input type="email" placeholder="Enter your email" />
+                            <button>
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</html>
