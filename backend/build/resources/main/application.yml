@@ -1,0 +1,32 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/TalkingPotatoes
+
+    username: root
+    password: 12345678
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+    thymeleaf:
+      cache: false
+
+
+#  jackson:
+#    serialization:
+#      fail-on-empty-beans: false
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: INFO
