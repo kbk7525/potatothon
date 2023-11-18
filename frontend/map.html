@@ -8,11 +8,19 @@
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0454ac8612a2837299b083a6aa492029"></script>
     <style>
         .edu_top_back {
-            background-image: url("picture/nature-845849_1920.jpg");
+            
             margin: 0 auto;
-            margin-top: -400px;
+            margin-top: -890px;
             height: 1000px;
             background-size: 120%;
+            z-index: -1;
+        }
+
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
         }
 
         .edu_top_back>.top_nav {
@@ -23,6 +31,7 @@
             font-size: 17px;
             position: sticky;
             top: -400px;
+            font-family: 'Pretendard-Regular';
         }
 
         .top_nav>a:hover {
@@ -36,12 +45,14 @@
             color: black;
             text-decoration: none;
             transition: all 0.4s;
+            font-family: 'Pretendard-Regular';
         }
 
         .edu_logo {
             margin: 20px auto;
             /* 위 아래 여백을 주기 위해 margin을 사용 */
             text-align: center;
+            font-family: 'Pretendard-Regular';
         }
 
         .edu_logo span {
@@ -49,23 +60,37 @@
             margin-top: 50px;
             /* 아래로 내리고 싶은 만큼의 여백 설정 */
             margin-bottom: -10px;
+            font-family: 'Pretendard-Regular';
+        }
+        
+        .edu_top_left{
+            background-color: white;
+            border-radius: 20px;
+            border: 2px solid black;
+            width: 100px;
+            height: 40px;
+            font-family: 'Pretendard-Regular';
+            font-weight: 600;
+            font-size: 25px;
+            margin-top: 1300px;
+            margin-left: 50px;
         }
     </style>
 </head>
 
 <body>
     <header>
+        
         <div class="edu_top_back">
             <div class="top_nav">
+                <a href="index.html" style="margin-right: 65px;">메인 페이지</a>
                 <a href="edu.html">교육 페이지</a>
                 <a href="declaration.html" style="margin-left: 70px; margin-right: 70px;">신고 페이지</a>
-                <a href="map.html">불법 투기</a>
+                <a href="map.html">불법 투기 현황</a>
             </div>
+        </div>
 
-            <div class="edu_logo">
-                <div style=" font-size: 20px; margin-top: 130px; margin-bottom: -10px;">scroll </div>
-                <div><i class="fa-solid fa-chevron-down"></i></div>
-            </div>
+        
         </div>
     </header>
     <div style="margin-top: 50px; margin-left: 240px; text-align: center;">
